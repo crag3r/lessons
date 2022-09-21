@@ -16,7 +16,7 @@ console.log(tab.shift())
 
 console.log(tab)
 
-//------------------
+//------------------- map
 
 const kolory = ["red", "green", "blue"];
 
@@ -24,7 +24,7 @@ const nowList = kolory.map(k => `<li> ${k} </li>`)
 
 console.log(nowList)
 
-//-------------------
+//------------------- forEach
 
 const pies = {
     imie: 'Bożydar',
@@ -39,3 +39,34 @@ for(let i in pies) {
 let nic = [1,2,true, "Tomek"]
 
 nic.forEach(value => console.log(String(value)+"200"))
+
+//------------------- for of
+
+const cos = ["polski", "matma", "informatyka"]
+
+for(let sb of cos) {
+    console.log(sb)
+}
+
+//------------------- destructing
+
+const eurocrem = {
+    imie: "ememe",
+    wiek: 15,
+    moc: 300
+}
+
+const imiemie = eurocrem.imie
+
+console.log(imiemie)
+
+const {imie, wiek, moc} = eurocrem
+
+let osoba = {name: "John", age:33}
+
+let {age} = osoba
+
+console.log(age)
+
+let {name: aaa} = osoba
+

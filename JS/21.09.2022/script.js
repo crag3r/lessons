@@ -24,3 +24,18 @@ const nowList = kolory.map(k => `<li> ${k} </li>`)
 
 console.log(nowList)
 
+//-------------------
+
+const pies = {
+    imie: 'Bożydar',
+    wiek: 17,
+    doesObeys: true
+}
+
+for(let i in pies) {
+    console.log(`${i} - ${pies[i]}`)
+}
+
+let nic = [1,2,true, "Tomek"]
+
+nic.forEach(value => console.log(String(value)+"200"))

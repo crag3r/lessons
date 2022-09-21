@@ -16,3 +16,11 @@ console.log(tab.shift())
 
 console.log(tab)
 
+//------------------
+
+const kolory = ["red", "green", "blue"];
+
+const nowList = kolory.map(k => `<li> ${k} </li>`)
+
+console.log(nowList)
+

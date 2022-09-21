@@ -70,3 +70,14 @@ console.log(age)
 
 let {name: aaa} = osoba
 
+let superman = {name: "Super", power: 30, age: 44, planet:"krypton"}
+
+let printPlanet = ({planet}) => console.log(planet)
+
+printPlanet(superman)
+
+let h = ["sport", "gotowanie", "granie"]
+
+let [www,qqq] = h
+
+console.log(qqq)

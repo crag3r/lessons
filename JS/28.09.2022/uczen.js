@@ -1,12 +1,4 @@
-class MyPerson {
-    constructor(name) {
-        this.name = name;
-    }
-
-    walk() {
-        console.log("Im walking..")
-    }
-}
+import { MyPerson } from "myperson.js"
 
 class Uczen extends MyPerson {
     constructor(name, school) {

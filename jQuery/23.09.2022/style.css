@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: Helvetica;
+    background-color: black;
+    color: white;
+    font-size: 150%;
+}
+select {
+    text-align: center;
+    border-radius: 5px;
+    width: 50vw;
+    height: 30px;
+    font-size: medium !important;
+}
+.main {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+}
+.tictac {
+    margin-top: 15px;
+    background-color: aliceblue;
+    border: 1px solid blue;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+}
+.game {
+    background-color: violet;
+    border: 1px solid yellow;
+    margin: 5px;
+
+}

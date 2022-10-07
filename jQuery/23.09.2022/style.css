@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 body {
     margin: 0;
     font-family: Helvetica;
@@ -21,20 +22,34 @@ select {
 }
 .tictac {
     margin-top: 15px;
-    background-color: aliceblue;
-    border: 1px solid blue;
-    height: 50vh;
-    width: 50vw;
+    background-color: rgb(20, 20, 20);
+    border-radius: 10px;
+    height: 55vh;
+    width: 55vw;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-flow: column wrap;
 }
 #reset {
-    
+    padding: 9px 18px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    background-color: rgb(116, 43, 190);
+    font-weight: bolder;
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+#reset:hover {
+    background-color: blueviolet;
+    scale: 1.01;
 }
 .game {
-    background-color: violet;
+    background-color: transparent;
     margin: 10px;
     display: flex;
     border-radius: 10px;
@@ -48,9 +63,26 @@ select {
     border-spacing: 12px;
 }
 td {
-    background-color: aqua;
+    background-color: rgb(54, 54, 54);
     border-radius: 10px;
+    transition: 0.2s;
+    width: 50px;
+    height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    font-family: 'Kalam', cursive;
+    font-size: 30px;
+    font-weight: bolder;
 }
 td:hover {
-    background-color: aliceblue;
+    background-color: rgb(73, 73, 73);
+    scale: 1.02;
 }
+@keyframes nope {
+    0% {transform: translate(3px, 3px) rotate(-1deg);}
+    25% {transform: translate(-3px, -3px) rotate(1deg);}
+    50% {transform: translate(-1px, 1px) rotate(-1deg);}
+    75% {transform: translate(1px, -1px) rotate(1deg);}
+    100% {transform: translate(-2px, -2px) rotate(-1deg);}
+}
+

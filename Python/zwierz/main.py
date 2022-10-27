@@ -1,3 +1,6 @@
+import sys
+from time import sleep
+
 class Zwierz():
     __hunger = 0
     __mood = 1
@@ -28,3 +31,23 @@ class Zwierz():
         self.__mood = newMood
     def setAlive(self, newAlive):
         self.__alive = newAlive
+
+
+    def say(self, name, message):
+        print(f"🐵 {name}: ", end="")
+        for x in message:
+            print(x, end="")
+            sys.stdout.flush()
+            sleep(0.1)
+    
+    def eat(self):
+        if self.getHunger() >= 10:
+            self.say(self.getName, "Nie jestem głodny")
+        else:
+            if self.getHunger() < 10:
+                self.setHunger(10)
+                self.say(self.getName, "Om nom nom nom")
+
+        input()
+
+

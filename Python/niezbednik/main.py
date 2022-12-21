@@ -11,14 +11,14 @@ class App(customtkinter.CTk):
         self.geometry("420x500")
         self.resizable(False,False)
         self.title("Niezbędnik Ucznia")
-
+    
+    def create_widgets(self):
         self.menu_frame = customtkinter.CTkFrame(self, corner_radius=0)
         self.menu_frame.grid(row=0, column=0, sticky="nw")
         self.menu_frame.grid_rowconfigure(4, weight=1)
 
         self.clock_frame = customtkinter.CTkFrame(self, corner_radius=0)
-        self.clock_frame.grid(row=0, column=2, sticky="ne")
-        self.clock_frame.grid_rowconfigure(1, weight=1)
+        self.clock_frame.place(relx=1, rely=0, anchor="ne")
 
         self.srednia = customtkinter.CTkButton(self.menu_frame, corner_radius=0, height=40, border_spacing=10, text="Oblicz Średnią", fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"), anchor="w")
         self.srednia.grid(row=1, column=0, sticky="ew")
@@ -34,8 +34,21 @@ class App(customtkinter.CTk):
 
         self.clock = customtkinter.CTkLabel(self.clock_frame, corner_radius=0, height=40, padx=10, pady=10, text="clock.time", fg_color="transparent", text_color=("gray10", "gray90"), anchor="e")
         self.clock.grid(row=1, column=0, sticky="we")
+        
+
+    def update_time(self):
+        #named_tuple = time.localtime()
+        curr_time=time.strftime("%H:%M:%S")
+        self.clock.configure(text=curr_time)
+        self.after(1000, self.update_time)
+    
+    def run(self):
+        self.mainloop()
+
 
 
 if __name__=="__main__":
     app = App()
-    app.mainloop()
+    app.create_widgets()
+    app.update_time()
+    app.run()

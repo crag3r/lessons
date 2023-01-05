@@ -43,13 +43,23 @@ class App(customtkinter.CTk):
         self.clock.configure(text=curr_time)
         self.after(1000, self.update_time)
 
+    def search_event(self, address):
+        self.map_widget.set_address(address)
+
     def open_map(self):
         window = customtkinter.CTkToplevel(self)
-        window.geometry("800x500")
+        window.geometry("800x550")
         window.resizable(False,False)
 
         map_widget = TkinterMapView(window, width=800, height=500, corner_radius=0)
-        map_widget.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+        map_widget.place(relx=0.5, rely=0, anchor=tkinter.N)
+        map_widget.set_address("Poland")
+
+        address_entry = customtkinter.CTkEntry(window, width=350)
+        address_entry.place(relx=0.3, rely=0.93, anchor=tkinter.N)
+
+        search_button = customtkinter.CTkButton(window, text="Szukaj", command=lambda: search_button(address_entry.get()))
+        search_button.place(relx=0.8, rely=0.93, anchor=tkinter.N)
 
     def run(self):
         self.mainloop()
